@@ -1,0 +1,26 @@
+<?php
+/**
+ * @license http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author Hervé Guétin <herve.guetin@gmail.com> <@herveguetin>
+ */
+/** @var $block \Herve\DateTimeExample\Block\Form */
+?>
+<?php $savedDateTime = $block->getSavedDateTimeForLocale() ?>
+<?php if ($savedDateTime): ?>
+    <dl>
+        <dt><?php echo __('ISO date / time') ?></dt>
+        <dd><?php echo $savedDateTime->getData('iso') ?></dd>
+        <dt><?php echo __('Full formatted date time with timezone') ?></dt>
+        <dd><?php echo $savedDateTime->getData('full') ?></dd>
+        <dt><?php echo __('Using Moment JS') ?></dt>
+        <dd data-herve-datetimeexample-moment></dd>
+    </dl>
+    <script type="text/x-magento-init">{"[data-herve-datetimeexample-moment]": {"herveDateTimeExample": <?php echo $savedDateTime->getData('json') ?>}}</script>
+<?php else: ?>
+    <?php echo __('No saved current Date / Time') ?>
+<?php endif ?>
+<form class="form" action="<?php echo $block->getFormAction(); ?>">
+    <button type="submit" title="<?php echo __('Save current Date / Time') ?>" class="action submit primary">
+        <span><?php echo __('Save current Date / Time') ?></span>
+    </button>
+</form>
