@@ -10,3 +10,7 @@ composer require herve/date-time-example
 php bin/magento module:enable Herve_DateTimeExample
 php bin/magento setup:upgrade
 ```
+
+## Usage
+
+Once the extension is installed on your Magento 2 instance, just go to http://your.domain/herve_datetimeexample
