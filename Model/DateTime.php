@@ -51,7 +51,7 @@ class DateTime
     {
         $usedDateTime = ($this->usedDatetime) ? $this->usedDatetime : $this->getCurrentDateTimeUTC();
 
-        return $this->timezone->date($usedDateTime)->format(MagentoDateTime::DATETIME_PHP_FORMAT);
+        return $this->timezone->date(new \DateTime($usedDateTime))->format(MagentoDateTime::DATETIME_PHP_FORMAT);
     }
 
     /**
